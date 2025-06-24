@@ -23,7 +23,7 @@ function getCountdown() {
 
 const Hero: React.FC = () => {
   const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
+  const [isAudioPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const visualizerRef = useRef<AnalyserNode | null>(null);
@@ -56,10 +56,11 @@ const Hero: React.FC = () => {
       visualizerRef.current.connect(audioContextRef.current.destination);
     }
 
-    const analyser = visualizerRef.current;
+   const analyser = visualizerRef.current;
+    if (!analyser) return; // ⛑ safe early return
+
     const bufferLength = analyser.frequencyBinCount;
     const dataArray = new Uint8Array(bufferLength);
-
     const drawVisualizer = () => {
       if (!isAudioPlaying) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -133,17 +134,6 @@ const Hero: React.FC = () => {
     };
   }, []);
 
-  // 🎵 Audio toggle
-  const toggleAudio = () => {
-    if (audioRef.current) {
-      if (isAudioPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play().catch(() => {});
-      }
-      setIsAudioPlaying(!isAudioPlaying);
-    }
-  };
 
   // 🖱️ Orb interaction
   useEffect(() => {

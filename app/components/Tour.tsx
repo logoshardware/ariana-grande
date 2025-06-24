@@ -30,16 +30,12 @@ const ListItem = styled.li`
   font-weight: 600;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 `;
-
 const tours = [
-  { date: "Jun 22", city: "Chicago, IL" },
-  { date: "Jun 25", city: "Toronto, ON" },
-  { date: "Jun 27", city: "Boston, MA" },
-  { date: "Jul 01", city: "Los Angeles, CA" },
-  { date: "Jul 05", city: "New York, NY" },
-  { date: "Jul 10", city: "London, UK" },
-  { date: "Jul 15", city: "Paris, FR" },
-  { date: "Jul 20", city: "Berlin, DE" },
+  { date: "Jul 01", city: "Los Angeles, CA", venue: "The Forum" },
+  { date: "Jul 05", city: "New York, NY", venue: "Madison Square Garden" },
+  { date: "Jul 10", city: "London, UK", venue: "O2 Arena" },
+  { date: "Jul 15", city: "Paris, FR", venue: "Accor Arena" },
+  { date: "Jul 20", city: "Berlin, DE", venue: "Mercedes-Benz Arena" },
 ];
 
 export default function Tour() {
