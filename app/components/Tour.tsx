@@ -32,10 +32,14 @@ const ListItem = styled.li`
 `;
 
 const tours = [
-  { date: 'July 15, 2025', city: 'New York, NY', venue: 'Madison Square Garden' },
-  { date: 'July 22, 2025', city: 'Los Angeles, CA', venue: 'Staples Center' },
-  { date: 'August 5, 2025', city: 'Chicago, IL', venue: 'United Center' },
-  // Add more tour dates here
+  { date: "Jun 22", city: "Chicago, IL" },
+  { date: "Jun 25", city: "Toronto, ON" },
+  { date: "Jun 27", city: "Boston, MA" },
+  { date: "Jul 01", city: "Los Angeles, CA" },
+  { date: "Jul 05", city: "New York, NY" },
+  { date: "Jul 10", city: "London, UK" },
+  { date: "Jul 15", city: "Paris, FR" },
+  { date: "Jul 20", city: "Berlin, DE" },
 ];
 
 export default function Tour() {
